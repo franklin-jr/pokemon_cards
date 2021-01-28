@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Pokemon;
+  src: url("../fonts/pokemon/pokemon_solid.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: TrebuchetM;
+  src: url("../fonts/trebuchet/trebuc.ttf") format("truetype");
+}
+
+* {
+  font-family: TrebuchetM;
+}
+
+.maxContainer {
+  max-width: 1000px;
+}
+
+.titlePokemon {
+  font-size: 50px;
+  font-family: Pokemon;
+}
+
+.titleSize {
+  font-size: 40px;
+}
+

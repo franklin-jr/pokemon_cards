@@ -25,6 +25,27 @@ export default new Vuex.Store({
             reject(erro)
           })
       })
+    },
+    getPokemonByName({commit}, payload) {
+      return new Promise((resolve, reject) => {
+        pokemonDao.getByName(payload)
+          .then(resp => {
+            commit('SET_POKEMON_LIST', resp.data.cards)
+            resolve()
+          }).catch(erro => {
+            reject(erro)
+          })
+      })
+    },
+    getPokemonById(_, payload) {
+      return new Promise((resolve, reject) => {
+        pokemonDao.getById(payload)
+          .then(resp => {
+            resolve(resp.data.card)
+          }).catch(erro => {
+            reject(erro)
+          })
+      })
     }
   },
   getters: {

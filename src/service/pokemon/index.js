@@ -10,15 +10,14 @@ let getByName = (name) => {
   return http.get(`cards/?name=${name}`);
 }
 
+let getById = (id) => {
+  return http.get(`cards/${id}`);
+}
 
-/* debounceSearch() {
-  clearTimeout(this.debounce)
-  this.debounce = setTimeout(() => {
-    this.createGetDataSource()
-  }, 900)
-}, */
+
 
 export default {
   getAll,
-  getByName
+  getByName,
+  getById
 }
