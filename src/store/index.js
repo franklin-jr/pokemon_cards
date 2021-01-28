@@ -19,6 +19,15 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         pokemonDao.getAll()
           .then(resp => {
+            resp.data.cards.sort(function (a, b) {
+              if (a.name > b.name) {
+                return 1;
+              }
+              if (a.name < b.name) {
+                return -1;
+              }
+              return 0;
+            });
             commit('SET_POKEMON_LIST', resp.data.cards)
             resolve()
           }).catch(erro => {
@@ -30,6 +39,15 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         pokemonDao.getByName(payload)
           .then(resp => {
+            resp.data.cards.sort(function (a, b) {
+              if (a.name > b.name) {
+                return 1;
+              }
+              if (a.name < b.name) {
+                return -1;
+              }
+              return 0;
+            });
             commit('SET_POKEMON_LIST', resp.data.cards)
             resolve()
           }).catch(erro => {

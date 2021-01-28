@@ -1,6 +1,6 @@
 <template>
   <v-app>
-  <!--  <header-app/> -->
+  <header-app/>
    <v-main class="grey lighten-3">
     <v-container
        fill-height
@@ -17,15 +17,13 @@
 
 <script>
 
-import PokeCard from '@/components/PokeCard'
-//import HeaderApp from '@/components/HeaderApp'
+import HeaderApp from '@/components/HeaderApp'
 
 
 export default {
   name: 'Home',
   components: {
-    PokeCard,
-    //HeaderApp
+    HeaderApp
   },
   data () {
     return {
